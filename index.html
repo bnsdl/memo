@@ -19,12 +19,10 @@
       }
 
       #timerCard {
-        position: absolute;
         top: 100px;
         left: 1000px;
-        height: 70px;
-        width: 120px;
-        border: 1px solid black;
+        color:#dba13f;
+        font-size: 30px;
         background: white;
       }
 
@@ -91,15 +89,15 @@
     <div id="carteG6" onclick="change(6)"></div>    <div id="carteC6"></div>
     <div id="carteG7" onclick="change(7)"></div>    <div id="carteC7"></div>
     <div id="carteG8" onclick="change(8)"></div>    <div id="carteC8"></div>
-    <div id="timerCard"></div><button type="button" onclick="reset()">Reset</button><p id='instruction'>Vous avez 20 secondes après avoir retourné la première carte pour réaliser ce mémo!</p>
+    <div id="timerCard">Timer</div><button type="button" onclick="reset()">Reset</button><p id='instruction'>Vous avez 20 secondes après avoir retourné la première carte pour réaliser ce mémo!</p>
 
   <script type="text/javascript">
 
 function randomColor() {
   var couleurs = ["red","blue","red","yellow","yellow","green","blue","green"];
-  for (i=0;couleurs.length>0;i++) {
+  for (i=1;couleurs.length>0;i++) {
     j = Math.floor(Math.random()*couleurs.length);
-    var numberCard = "carteC" +(i+1);
+    var numberCard = "carteC" +(i);
     document.getElementById(numberCard).style.backgroundColor = couleurs[j];
     couleurs.splice(j,1);
   }
@@ -107,23 +105,29 @@ function randomColor() {
 randomColor();
 
 
-var afficheTimer = document.getElementById("timerCard").textContent;
-var timeoutID;
+var divTimer = document.getElementById("timerCard");
 var userChoices = [];
 var x;
 var z;
 
+
 function change(i) {
   if (z === undefined) {
-    timeoutID = z = window.setTimeout(reset, 20000);
+    z = window.setInterval(function() {
+      divTimer.textContent = z+" sec";
+      z++;
+      if (z === 21) {
+        reset();
+      }
+    },1000)
   }
   var card = "carteC" +i;
   document.getElementById(card).style.display = "block";
   userChoices.push(card);
   if (userChoices.length == 1) {
-     timeoutID = x = window.setTimeout(function() {document.getElementById(card).style.display = "none";
-       userChoices = [];
-      }, 4000);
+    x = window.setTimeout(function() {document.getElementById(card).style.display = "none";
+    userChoices = [];
+    }, 4000);
   }
   else if (userChoices.length == 2) {
     var choix1 = document.getElementById(userChoices[0]).style;
