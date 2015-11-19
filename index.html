@@ -5,100 +5,342 @@
     <title>memo</title>
     <style media="screen">
 
-      body {
-        width:1000px;
-      }
-
       div {
-        display:;
-        height: 300px;
-        width: 200px;
-        background: grey;
-        border-radius: 5px;
         position: absolute;
       }
 
       #timerCard {
-        top: 100px;
-        left: 1000px;
+        top: 380px;
+        left: 800px;
         color:#dba13f;
         font-size: 30px;
-        background: white;
       }
 
-      #carteG1, #carteG2, #carteG3, #carteG4, #carteG5, #carteG6, #carteG7, #carteG8 {
-        background: grey;
+      #table {
+        background: url("tapis.png") no-repeat;
+        padding:170px 250px;
+        width: 800px;
+        height: 800px;
+      }
+
+      #carteG1, #carteG2, #carteG3, #carteG4, #carteG5, #carteG6, #carteG7, #carteG8, #carteG9, #carteG10, #carteG11, #carteG12, #carteG13, #carteG14, #carteG15, #carteG16 {
+        background: url("carte.jpg");
         border-radius: 5px;
-        display:inline-block;
+        height: 110px;
+        width: 80px;
+        border: 1px solid black;
       }
 
-      #carteC1, #carteC2, #carteC3, #carteC4, #carteC5, #carteC6, #carteC7, #carteC8 {
+      #carteC1, #carteC2, #carteC3, #carteC4, #carteC5, #carteC6, #carteC7, #carteC8, #carteC9, #carteC10, #carteC11, #carteC12, #carteC13, #carteC14, #carteC15, #carteC16  {
         display:none;
+        height: 110px;
+        width: 80px;
+        border-radius: 5px;
+        border: 1px solid black;
       }
 
+      @keyframes G1 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:150px;
+        left:300px;}
+      }
+
+      @keyframes G2 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:150px;
+        left:400px;}
+      }
+
+      @keyframes G3 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:150px;
+        left:500px;}
+      }
+
+      @keyframes G4 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:150px;
+        left:600px;}
+      }
+
+      @keyframes G5 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:280px;
+        left:300px;}
+      }
+
+      @keyframes G6 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:280px;
+        left:400px;}
+      }
+
+      @keyframes G7 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:280px;
+        left:500px;}
+      }
+
+      @keyframes G8 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:280px;
+        left:600px;}
+      }
+
+      @keyframes G9 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:410px;
+        left:300px;}
+      }
+
+      @keyframes G10 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:410px;
+        left:400px;}
+      }
+
+      @keyframes G11 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:410px;
+        left:500px;}
+      }
+
+      @keyframes G12 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:410px;
+        left:600px;}
+      }
+
+      @keyframes G13 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:540px;
+        left:300px;}
+      }
+
+      @keyframes G14 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:540px;
+        left:400px;}
+      }
+
+      @keyframes G15 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:540px;
+        left:500px;}
+      }
+
+      @keyframes G16 {
+        0% {top:50px;
+            left:50px;}
+        100% {top:540px;
+        left:600px;}
+      }
+
+      #carteG1 {
+        animation: G1 1s;
+      }
       #carteG1, #carteC1 {
-        top:30px;
-        left:40px;
+        top:150px;
+        left:300px;
       }
 
+      #carteG2{
+        animation: G2 1s;
+      }
       #carteG2, #carteC2  {
-        top:30px;
-        left:280px;
+        top:150px;
+        left:400px;
+      }
+
+      #carteG3{
+        animation: G3 1s;
       }
       #carteG3, #carteC3  {
-        top: 30px;
-        left: 520px;
+        top: 150px;
+        left: 500px;
+      }
+
+      #carteG4{
+        animation: G4 1s;
       }
       #carteG4, #carteC4  {
-        top:30px;
-        left:760px;
+        top:150px;
+        left:600px;
+      }
+
+      #carteG5{
+        animation: G5 1s;
       }
       #carteG5, #carteC5  {
-        top:360px;
-        left:40px;
+        top:280px;
+        left:300px;
+      }
+
+      #carteG6{
+        animation: G6 1s;
       }
       #carteG6, #carteC6 {
-        top:360px;
-        left:280px;
+        top:280px;
+        left:400px;
+      }
+
+      #carteG7{
+        animation: G7 1s;
       }
       #carteG7, #carteC7  {
-        top:360px;
-        left:520px;
+        top:280px;
+        left:500px;
+      }
+
+      #carteG8{
+        animation: G8 1s;
       }
       #carteG8, #carteC8  {
-        top:360px;
-        left:760px;
+        top:280px;
+        left:600px;
+      }
+
+      #carteG9{
+        animation: G9 1s;
+      }
+      #carteG9, #carteC9  {
+        top:410px;
+        left:300px;
+      }
+
+      #carteG10{
+        animation: G10 1s;
+      }
+      #carteG10, #carteC10  {
+        top:410px;
+        left:400px;
+      }
+
+      #carteG11{
+        animation: G11 1s;
+      }
+      #carteG11, #carteC11  {
+        top:410px;
+        left:500px;
+      }
+
+      #carteG12{
+        animation: G12 1s;
+      }
+      #carteG12, #carteC12  {
+        top:410px;
+        left:600px;
+      }
+
+      #carteG13{
+        animation: G13 1s;
+      }
+      #carteG13, #carteC13  {
+        top:540px;
+        left:300px;
+      }
+
+      #carteG14{
+        animation: G14 1s;
+      }
+      #carteG14, #carteC14  {
+        top:540px;
+        left:400px;
+      }
+
+      #carteG15{
+        animation: G15 1s;
+      }
+      #carteG15, #carteC15  {
+        top:540px;
+        left:500px;
+      }
+
+      #carteG16{
+        animation: G16 1s;
+      }
+      #carteG16, #carteC16  {
+        top:540px;
+        left:600px;
+      }
+
+      #instruction, button {
+        position: relative;
+        top:-110px;
+        left: -50px;
+        font-size: 20px;
+        border-radius: 5px;
       }
 
       #instruction {
-        position: relative;
-        left: 100px;
-        top:-40px
+        color: lightgrey;
       }
+
+      #victoire {
+        position: absolute;
+        left:250px;
+        top: 160px;
+        border: 2px solid white;
+        display: none;
+        background: url('champagne.jpg');
+        background-size: 100% auto;
+        height:500px;
+        width: 600px;
+      }
+
 
 
 
     </style>
   </head>
   <body>
-    <div id="carteG1" onclick="change(1)"></div>    <div id="carteC1"></div>
-    <div id="carteG2" onclick="change(2)"></div>    <div id="carteC2"></div>
-    <div id="carteG3" onclick="change(3)"></div>    <div id="carteC3"></div>
-    <div id="carteG4" onclick="change(4)"></div>    <div id="carteC4"></div>
-    <div id="carteG5" onclick="change(5)"></div>    <div id="carteC5"></div>
-    <div id="carteG6" onclick="change(6)"></div>    <div id="carteC6"></div>
-    <div id="carteG7" onclick="change(7)"></div>    <div id="carteC7"></div>
-    <div id="carteG8" onclick="change(8)"></div>    <div id="carteC8"></div>
-    <div id="timerCard">Timer</div><button type="button" onclick="reset()">Reset</button><p id='instruction'>Vous avez 20 secondes après avoir retourné la première carte pour réaliser ce mémo!</p>
 
+    <div id="table">
+      <button type="button" onclick="reset()">Reset</button><p id='instruction'>Vous avez 40 secondes après avoir retourné la première carte pour réaliser ce mémo!</p>
+
+      <div id="carteG1" onclick="change(1)"></div>    <div id="carteC1"></div>
+      <div id="carteG2" onclick="change(2)"></div>    <div id="carteC2"></div>
+      <div id="carteG3" onclick="change(3)"></div>    <div id="carteC3"></div>
+      <div id="carteG4" onclick="change(4)"></div>    <div id="carteC4"></div>
+      <div id="carteG5" onclick="change(5)"></div>    <div id="carteC5"></div>
+      <div id="carteG6" onclick="change(6)"></div>    <div id="carteC6"></div>
+      <div id="carteG7" onclick="change(7)"></div>    <div id="carteC7"></div>
+      <div id="carteG8" onclick="change(8)"></div>    <div id="carteC8"></div>
+      <div id="carteG9" onclick="change(9)"></div>    <div id="carteC9"></div>
+      <div id="carteG10" onclick="change(10)"></div>    <div id="carteC10"></div>
+      <div id="carteG11" onclick="change(11)"></div>    <div id="carteC11"></div>
+      <div id="carteG12" onclick="change(12)"></div>    <div id="carteC12"></div>
+      <div id="carteG13" onclick="change(13)"></div>    <div id="carteC13"></div>
+      <div id="carteG14" onclick="change(14)"></div>    <div id="carteC14"></div>
+      <div id="carteG15" onclick="change(15)"></div>    <div id="carteC15"></div>
+      <div id="carteG16" onclick="change(16)"></div>    <div id="carteC16"></div>
+      <div id="timerCard">Timer</div>
+    </div>
+    <div id="victoire"></div>
   <script type="text/javascript">
 
+
 function randomColor() {
-  var couleurs = ["red","blue","red","yellow","yellow","green","blue","green"];
+  var couleurs = ["red","blue","red","url(pikachu.jpg)","url(pikachu.jpg)","green","blue","green","purple","orange","pink","orange","lightblue","lightblue","pink","purple"];
   for (i=1;couleurs.length>0;i++) {
     j = Math.floor(Math.random()*couleurs.length);
-    var numberCard = "carteC" +(i);
-    document.getElementById(numberCard).style.backgroundColor = couleurs[j];
+    var numberCard = "carteC" +i;
+    document.getElementById(numberCard).style.background = couleurs[j];
     couleurs.splice(j,1);
   }
 }
@@ -108,7 +350,12 @@ randomColor();
 var divTimer = document.getElementById("timerCard");
 var userChoices = [];
 var x;
+var y;
 var z;
+var choix1;
+var choix2;
+var choix3;
+var final = [];
 
 
 function change(i) {
@@ -116,7 +363,7 @@ function change(i) {
     z = window.setInterval(function() {
       divTimer.textContent = z+" sec";
       z++;
-      if (z === 21) {
+      if (z === 41) {
         reset();
       }
     },1000)
@@ -130,24 +377,42 @@ function change(i) {
     }, 4000);
   }
   else if (userChoices.length == 2) {
-    var choix1 = document.getElementById(userChoices[0]).style;
-    var choix2 = document.getElementById(userChoices[1]).style;
-    if (choix1.backgroundColor === choix2.backgroundColor) {
-      alert("pair trouvée");
+    choix1 = document.getElementById(userChoices[0]).style;
+    choix2 = document.getElementById(userChoices[1]).style;
+    if (choix1.background === choix2.background) {
       window.clearTimeout(x);
       choix1.display = "block";
       choix2.display = "block";
+      final.push(choix1.background);
       userChoices = [];
+      console.log(final);
+      if (final.length === 8) {
+        console.log("EI final");
+        window.clearInterval(z);
+        document.getElementById("victoire").style.display="block";
+        alert("Victoire!");
+        window.setTimeout(function(){
+          document.getElementById("victoire").style.display="none";
+          reset();
+        }, 3000);
+      }
     }
     else {
-      alert("raté");
       window.clearTimeout(x);
-      choix1.display="none";
-      choix2.display="none";
-      userChoices = [];
+      y = window.setTimeout(function() {
+        choix2.display="none";
+        choix1.display="none";
+        userChoices = [];
+      }, 700);
     }
   }
+  else if (userChoices.length > 2) {
+    choix3 = document.getElementById(userChoices[2]).style;
+    choix3.display="none";
+    alert("2 cartes à la fois!");
+  }
 }
+
 
 function reset() {
   alert("jeu remis à zéro");
