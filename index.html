@@ -198,7 +198,7 @@
       }
 
       #carteG3{
-        animation: G3 2.3s;
+        animation: G3 2.2s;
       }
       #carteG3, #carteC3  {
         top: 150px;
@@ -331,6 +331,8 @@
         background-size: 100% auto;
         height:500px;
         width: 600px;
+        text-align: center;
+        line-height: 500px;
       }
 
 
@@ -361,21 +363,8 @@
       <div id="carteG16" onclick="change(16)"></div>    <div id="carteC16"></div>
       <div id="timerCard">Timer</div>
     </div>
-    <div id="victoire"></div>
+    <div id="victoire"><h1>Victoire!</h1></div>
   <script type="text/javascript">
-
-
-function randomColor() {
-  var couleurs = ["red","blue","red","url(pikachu.jpg)","url(pikachu.jpg)","green","blue","green","purple","orange","pink","orange","lightblue","lightblue","pink","purple"];
-  for (i=1;couleurs.length>0;i++) {
-    j = Math.floor(Math.random()*couleurs.length);
-    var numberCard = "carteC" +i;
-    document.getElementById(numberCard).style.background = couleurs[j];
-    couleurs.splice(j,1);
-  }
-}
-randomColor();
-
 
 var divTimer = document.getElementById("timerCard");
 var userChoices = [];
@@ -387,13 +376,25 @@ var choix2;
 var choix3;
 var final = [];
 
+function randomColor() {
+  var couleurs = ["red","blue","red","url(pikachu.jpg)","url(pikachu.jpg)","green","blue","green","purple","orange","pink","orange","lightblue","lightblue","pink","purple"];
+  for (var i=1;couleurs.length>0;i++) {
+    var j = Math.floor(Math.random()*couleurs.length);
+    var idCard = "carteC" +i;
+    document.getElementById(idCard).style.background = couleurs[j];
+    couleurs.splice(j,1);
+  }
+}
+
+randomColor();
+var timerMax = 40;
 
 function change(i) {
   if (z === undefined) {
     z = window.setInterval(function() {
-      divTimer.textContent = z+" sec";
+      divTimer.textContent = timerMax - z+" sec";
       z++;
-      if (z === 41) {
+      if (z === timerMax+1) {
         reset();
       }
     },1000)
@@ -415,14 +416,14 @@ function change(i) {
       choix2.display = "block";
       final.push(choix1.background);
       userChoices = [];
-      console.log(final);
+      // console.log(final);
       if (final.length === 8) {
-        console.log("EI final");
+        // console.log("EI final");
         window.clearInterval(z);
-        document.getElementById("victoire").style.display="block";
+        var victory = document.getElementById("victoire").style.display="block";
         alert("Victoire!");
         window.setTimeout(function(){
-          document.getElementById("victoire").style.display="none";
+          victory = "none";
           reset();
         }, 3000);
       }
